@@ -77,7 +77,22 @@ function print(){
 	raw_data["data"].forEach(function(res){				
 		$('#raw').append('<br>--------------------------');
 		$('#raw').append('----------------------<br><br>');
-		$('#raw').append(count + ' -> ' +JSON.stringify(res, null, 5));
+		$('#raw').append(count + ' -> ' + JSON.stringify(res, null, 5));
 		count++;
 	});
 }
+
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+
+$('#backup').click(function(){
+	var filename = $('#url').find(":selected").val() + '_' + $('#operation').find(":selected").val() + '_' + (new Date().toLocaleString()) + ".txt";
+	download(filename, JSON.stringify(raw_data, null, 5))
+});
