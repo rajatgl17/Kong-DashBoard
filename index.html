@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kong -  Azuga</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+	<div class="row"">
+		 <select name="Kong" class="form-control" id="url">
+			  <option value="staging" selected >Staging</option>
+			  <option value="production">Production</option>
+		</select>
+		<select name="Operation" class="form-control" id="operation">
+			  <option value="apis" selected >All API's</option>
+			  <option value="consumers">All consumers</option>
+			  <option value="plugins">All plugins</option>
+			  <option value="oauth2">All oauth2</option>
+			  <option value="keys">All keys</option>
+			  <option value="p4a">Plugin for api</option>
+			  <option value="k4c;">Key for consumer</option>
+		</select>
+		<input type="text" id="field" class="form-control">
+		<input type="button" id="button" value="Show" class="btn btn-default">
+	</div>
+	<div class="row">
+		<pre id="raw" class="col-md-12"></pre>
+	</div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
